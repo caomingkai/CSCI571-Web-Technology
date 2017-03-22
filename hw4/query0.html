@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>
+        hw4-query
+      </title>
+  </head>
+
+
+  <body>
+    <h1> Enter URL for Airline List XML File</h1>
+    <input type = "text" id="urlInput">
+    <br/>
+    <button type = "button" onclick="processXml()">Submit Query</button>
+    <p id ="test"> </p>
+  </body>
+
+
+  <script>
+    function processXml(){
+      var xmlUrl = document.getElementById("urlInput").value;
+      document.getElementById("test").innerHTML = xmlUrl;
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if( this.readyState == 4 && this.status == 200){
+          renderXml(this);
+        }
+      }
+      // xmlhttp.open("GET", xmlUrl, true);
+      xmlhttp.open("GET", "xmlUrl", true);
+      xmlhttp.send();
+    }
+
+    function renderXml(xmlhttp){
+      var xmlDoc = xml.responseText;// responseXML;
+      document.getElementById('test').innerHTML = xmlDoc;
+    }
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

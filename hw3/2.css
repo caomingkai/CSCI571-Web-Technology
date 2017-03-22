@@ -1,0 +1,194 @@
+
+.wrapper{
+  margin: auto;
+  border: 1px black solid;
+  width: 1182px;
+  height: 1208px;
+}
+.upper{
+  height: 59.4%;
+  text-align: center;
+}
+.location{
+  margin: auto;
+  margin-top: 3.64%;
+  width: 36.3%;
+  height: 36.4%;
+  background-color: black;
+}
+.location h2{
+  /*margin-top: 50px;*/
+  padding-top:14.9%;
+  /*padding-bottom:0px;*/
+  /*height: 20%;*/
+  color: white;
+  font-family: Arial;
+  font-size: 20px;
+  border: 2px red solid;
+}
+.location hr{
+  width:80%;
+  color:white;
+  /*border-width:1px;*/
+}
+.no13{
+  margin: auto;
+  /*margin-top: 0;*/
+  /*margin-bottom: 30px;*/
+  width: 50%;
+  height:32.6%;
+  border: 2px red solid;
+  color: white;
+  font-family: Arial;
+  font-size: 10px;
+  /*position:relative;
+  top:0px;
+  left: 0px;*/
+}
+.no{
+  width: 20%;
+  float: left;
+  margin-top: 0;
+  border: 2px green solid;
+  line-height: 30px;
+  font-size: 30px;
+  /*position: absolute;
+  top:0px;
+  left:0px;*/
+}
+.thirteen{
+  margin-top: 0;
+  width: 60%;
+  float: right;
+  border: 2px green solid;
+  line-height: 90px;
+  font-size: 120px;
+}
+
+.hello{
+  margin: auto;
+  margin-top: 3.9%;
+  width: 100%;
+  height: 58%;
+  background-image: url("sayhello.png");
+  background-repeat:no-repeat;
+  border: 2px blue solid;
+}
+.hello h3{
+  margin-top: 9%;
+  border:1px red solid;
+}
+.hello button{
+  margin-top: 3.3%;
+  width: 23.9%;
+  height: 13.5%;
+  /*background-color: black;*/
+  color: black;
+  border: 2px solid black; /* Green */
+}
+.lower{
+  height: 40%;
+  background-color: black;
+  color: white;
+}
+.readSignUp{
+  width: 100%;
+  height:40.3%;
+  border-bottom: 1px solid grey;
+}
+.read{
+  /*margin-top: 2.6%;*/
+  width: 37.5%;
+  height: 100%;
+  border-right: solid 1px grey;
+  float: left;
+}
+.read p{
+  margin-top:18%;
+  text-align: center;
+  font: 20px Serif;
+}
+.signUp{
+  width: 55%;
+  height: 100%;
+  float: right;
+}
+.signUp p{
+  margin-top: 7%;
+  font: 12px Serif;
+  color: yellow;
+  /*border: 1px yellow solid;*/
+}
+.signUp .emailBox{
+  width: 43.8%;
+  height: 29%;
+  border: 1px solid black; /* Green */
+}
+
+.signUp .submitButton{
+  width: 30%;
+  height: 29%;
+  background-color: black;
+  color: white;
+  border: 1px solid white; /* Green */
+}
+
+/*.info{
+  background-color: green;
+}*/
+
+.info table.headQuarters{
+  float:left;
+  margin-left: 20px;
+  width: 30.5%;
+  /*border: 1px red solid;*/
+  border-collapse: collapse;
+}
+table.headQuarters td{
+  /*border: 1px solid white;*/
+  height: inherit;
+  /*padding: 0;*/
+}
+
+table.headQuarters .contactUs{
+  vertical-align:center;
+  text-align:center;
+  color: yellow;
+  /*border: 1px solid red;*/
+}
+.none{
+  border: 1px solid white;
+}
+.info table.offices {
+  float: right;
+  width: 60%;
+  height: inherit;
+  border: 1px red solid;
+  /*background-color: red;*/
+}
+/*.h1 , .h2{
+  color:red;
+}
+.div h3{
+  color:blue;
+}*/
+
+.info table ul{
+  list-style-type: none;
+}
+span.officeType{
+  color: yellow;
+  font-size: 25px;
+  font-family: monospace;
+}
+
+li span{
+  color: yellow;
+}
+.cityName{
+  font-size: 20px;
+  font-family: monospace;
+}
+.info .headQuarters .contactUs{
+  border:1px solid red;
+}

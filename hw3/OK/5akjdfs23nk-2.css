@@ -1,0 +1,343 @@
+a:link {color: white}
+a:active { text-decoration:none; color: inherit;}
+a:hover { text-decoration:none;color: inherit;}
+a:visited { text-decoration:none;color: inherit;}
+
+*:focus{
+  outline: none;
+}
+
+@font-face {
+    font-family: myHelvetica;
+    src: url(http://www-scf.usc.edu/~mingkaic/font/helvetica-webfont.woff);
+}
+.wrapper{
+  width: 1172px;
+  height: 1253px;
+  /*padding: 0;*/
+  margin:0 auto;
+  font-family:  myHelvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: lighter;
+  /*border: 1px black solid;*/
+
+  background-image: url(http://www-scf.usc.edu/~mingkaic/img/firefox.png);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity:0.8;
+}
+/*----------------------upper part-------------------------*/
+.upper{
+  padding-top: 45px;
+  width: 100%;
+  height: 672px;
+  text-align: center;
+  /*border: 1px red solid;*/
+}
+
+.location{
+  margin: auto;
+  width: 430px;
+  height: 261px;
+  /*background-color: black;*/
+  /*opacity: 0.4;*/
+}
+
+.location h2{
+  padding-top:62.4px;
+  margin-top: 0;
+  padding-right:8.7px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 14.3px;
+  letter-spacing: 0.05px;
+  font-weight: 400;
+  text-indent: 2.8px;
+  /*border: 1px red solid;*/
+}
+
+.location hr{
+  margin-top: 20.5px;
+  width:350px;
+  color:white;
+  border-bottom: 2px;
+}
+
+.no13{
+  margin: auto;
+  margin-top: 22px;
+  padding-right: 12px;
+  padding-left: 1px;
+  width: 240px;
+  /*border: 1px red solid;*/
+  color: white;
+}
+
+.no13 hr{
+  float: left;
+  width: 87px;
+  border: 3.3px white solid;
+  margin-top: 0px;
+  margin-left: 13.4px;
+}
+.no{
+  width: 38%;
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-indent: 13px;
+  font-weight: 500;
+  font-size: 59px;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+.thirteen{
+  width: 53%;
+  float: right;
+  margin-top: 1.5px;
+  margin-bottom: 0;
+  padding-right: 9px;
+  /*border: 2px green solid;*/
+  line-height: 104px;
+  font-size: 120px;
+  font-weight: 500;
+  text-align:right;
+}
+.thirteen a{
+  margin: 0;
+  padding: 0;
+}
+.thirteen a:link{
+  text-decoration: none;
+}
+
+.clear{
+  clear: both;
+}
+.hello{
+  position: relative;
+  margin: auto;
+  margin-top: 46px;
+  padding-top: 42px;
+  width: 100%;
+  height: 366px;
+  /*background-image: url("sayhello.png");
+  background-size: 1170px;
+  background-repeat:no-repeat;*/
+  /*border: 1px blue solid;*/
+}
+
+.hello img{
+  width: 1170px;
+  position: absolute;
+  left:0px;
+  top:0px;
+}
+
+.hello h3{
+  margin-top: 53px;
+  margin-right: 6px;
+  /*border:1px red solid;*/
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+.hello p{
+  line-height: 22px;
+  margin-top: 23px;
+  margin-right: 2px;
+  font-size: 18.1px;
+  font-weight: normal;
+  /*letter-spacing: 0.04px;*/
+}
+.hello a.getInTouch{
+  position: absolute;
+  margin-top:17.6px;
+  margin-left: 442.5px;
+  display: block;
+  width: 278.6px;
+  height: 52.2px;
+  background-color: white;
+  border: 3.7px solid black;
+  /*opacity: 0.5;*/
+}
+.hello a p.button{
+  margin-top: 15px;
+  padding-left: 3px;
+  padding-bottom: 13px;
+  font-size: 12.1px;
+  letter-spacing:0.7px;
+  font-weight: 500;
+}
+.hello  a:link{
+  color:black;
+  text-decoration:none;
+}
+.hello  a:hover{
+  background-color: black;
+  color:white;
+  text-decoration:none;
+}
+/*----------------------lower part-------------------------*/
+.lower{
+  position: relative;
+  width: 100%;
+  height: 536px;
+  /*background-color: black;*/
+  color: white;
+  /*border: 1px yellow solid;*/
+}
+.readSignUp{
+  height:203px;
+  border-bottom: 1px solid grey;
+}
+.read{
+  float: left;
+  width: 37.5%;
+  height: 100%;
+  border-right: solid 1px grey;
+}
+.read p{
+  margin-top:0.5px;
+  margin-right:5.5px;
+  padding-top:103px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.67px;
+}
+/*.read p a{
+  display: block;
+  width: 300px;
+  margin-left: 30px;
+  height: auto;
+  border: 1px solid white;
+}*/
+.read p a:focus {
+    border: 1px dotted white;
+}
+.read p a:link{
+  text-decoration: none;
+}
+.read p a:hover{
+  text-decoration: underline;
+}
+.read p a:active{
+  border: 1px dotted black;
+}
+
+.signUp{
+  width: 62.4%;
+  float: right;
+}
+.signUp p.fontColorYellow{
+  margin-top: 63.5px;
+  margin-left: 69px;
+  font-size: 12.5px;
+  letter-spacing: 0.52px;
+}
+.signUp .emailBox{
+  margin-top: 10.5px;
+  margin-left: 71px;
+  width: 315px;
+  height: 48.5px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+  text-indent: 9px;
+  /*opacity:0.5;*/
+  border: 1px solid black; /* Green */
+}.signUp .emailBox:focus , .signUp .emailBox:hover{
+  margin-top: 11.5px;
+  margin-left: 72px;
+  width: 313px;
+  height: 46.5px;
+  text-indent: 8px;
+}
+.signUp a{
+  display: block;
+  float: right;
+  margin-top: 8px;
+  margin-left:0px;
+  margin-right: 103px;
+  width: 224px;
+  height: 55px;
+  line-height: 57px;
+  border: 3.3px solid white;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-indent: 5px;
+  /*opacity:0.5;*/
+}
+.signUp a p{
+  margin: 0;
+  font-size: 11.9px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+.signUp a:link{
+  text-decoration: none;
+}
+.signUp a:hover p{
+  background-color:white;
+  color:black;
+}
+
+/*general style for all the 5 td*/
+.info table td{
+  text-indent: 35.6px;
+  /*padding-top: 13.6px;*/
+  width: 206px;
+  height:240.4px;
+  /*border: 1px red solid;*/
+}
+
+.info table td p{
+  margin:6px 0;
+  font-size: 13.7px;
+  letter-spacing: 0.05px;
+}
+
+.info table td p.addr,.info table td p.addr1{
+  padding-top: 0.4px;
+  font-size: 13.6px;
+  font-weight: 400;
+}
+.info table td p.officeType{
+  margin-top: 26px;
+  font-size: 15.8px;
+  font-weight: 400;
+}
+
+.info table td p.cityName{
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 14.5px;
+  font-weight: 400;
+}
+.info table td p.T{
+  padding-top: 30.7px;
+  letter-spacing: 0.07px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.info table td p.E{
+  font-weight: 400;
+  line-height: 9px;
+}
+.info table td p.at{
+  font-weight: 400;
+  line-height: 11px;
+  letter-spacing: 0.15px;
+}
+.fontColorYellow{
+  /*color:#DAA520;*/
+  color: #B69B47;
+  /*color:red;*/
+}
+/*specific  style for 1st td*/
+.info table td.headquarters{
+  vertical-align:top;
+  width: 240px;
+  text-indent: 43px;
+  /*padding-top: 31px;*/
+}

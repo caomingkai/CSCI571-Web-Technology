@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<Mainline>
+  <Table>
+   <Header>
+    <Data>Airline11</Data>
+    <Data>IATA22</Data>
+    <Data>Hubs33</Data>
+    <Data>Notes44</Data>
+    <Data>HomePage55</Data>
+    <Data>Plane66</Data>
+   </Header>
+
+   <Row>
+    <Airline>Alaska Airlines</Airline>
+    <IATA>AS</IATA>
+    <Hubs>
+        <Hub></Hub>
+        <Hub>Anchorage</Hub>
+        <Hub>   </Hub>
+    </Hubs>
+    <Notes>Founded as McGee Airways, and commenced operations in 1944 as Alaska Airlines. Plans have been made for Alaska Airlines to acquire Virgin America.</Notes>
+    <HomePage>https://www.alaskaair.com/</HomePage>
+    <Plane>http://cs-server.usc.edu:45678/hw/hw4/Alaska_Airlines,_Boeing_737.jpg</Plane>
+   </Row>
+
+   <Row>
+    <Airline>Delta Air Lines</Airline>
+    <IATA>DL</IATA>
+    <Hubs>
+        <Hub>Atlanta</Hub>
+        <Hub>Amsterdam</Hub>
+        <Hub>Boston</Hub>
+        <Hub>Detroit</Hub>
+    </Hubs>
+    <Notes>Founded as Huff Daland Dusters; largest airline in the world based on number of passengers served per year.</Notes>
+    <HomePage>https://www.delta.com</HomePage>
+    <Plane>http://cs-server.usc.edu:45678/hw/hw4/Delta_B747.jpg</Plane>
+   </Row>
+
+   <Row>
+    <Airline>Delta Air Lines</Airline>
+    <IATA>DL</IATA>
+    <Hubs>
+        <Hub>Atlanta</Hub>
+        <Hub>Amsterdam</Hub>
+        <Hub>Boston</Hub>
+        <Hub>Detroit</Hub>
+        <Hub>Tokyo-Narita</Hub>
+    </Hubs>
+    <Notes>Founded as Huff Daland Dusters; largest airline in the world based on number of passengers served per year.</Notes>
+    <HomePage>https://www.delta.com</HomePage>
+    <Plane>http://cs-server.usc.edu:45678/hw/hw4/Delta_B747.jpg</Plane>
+   </Row>
+
+   <Row>
+    <Airline>Delta Air Lines</Airline>
+    <IATA>DL</IATA>
+    <Hubs>
+        <Hub></Hub>
+
+    </Hubs>
+    <Notes>Founded as Huff Daland Dusters; largest airline in the world based on number of passengers served per year.</Notes>
+    <HomePage>https://www.delta.com</HomePage>
+    <Plane>http://cs-server.usc.edu:45678/hw/hw4/Delta_B747.jpg</Plane>
+   </Row>
+
+   <Row>
+    <Airline>Delta Air Lines</Airline>
+    <IATA></IATA>
+    <Hubs>
+        <Hub>Atlanta</Hub>
+    </Hubs>
+    <Notes>Founded as Huff Daland Dusters; largest airline in the world based on number of passengers served per year.</Notes>
+    <HomePage>https://www.delta.com</HomePage>
+    <Plane>http://cs-server.usc.edu:45678/hw/hw4/Delta_B747.jpg</Plane>
+   </Row>
+
+   <Row>
+    <Airline>Frontier Airlines</Airline>
+    <IATA>F9</IATA>
+    <Hubs>
+        <Hub> </Hub>
+        <Hub> </Hub>
+        <Hub> </Hub>
+        <Hub> </Hub>
+        <Hub>   </Hub>
+        <Hub>  </Hub>
+        <Hub>  </Hub>
+        <Hub>Washington-Dulles</Hub>
+    </Hubs>
+    <Notes></Notes>
+    <HomePage>http://www.flyfrontier.com/</HomePage>
+    <Plane>http://cs-server.usc.edu:45678/hw/hw4/Airbus_A320-214,_Frontier_Airlines.jpg</Plane>
+   </Row>
+
+
+</Table>
+</Mainline>

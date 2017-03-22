@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>
+        hw4-query
+      </title>
+  </head>
+
+
+  <body>
+    <h1> Enter URL for Airline List XML File</h1>
+    <input type = "text" id="urlInput">
+    <br/>
+    <button type = "button" onclick="processXml()">Submit Query</button>
+    <button type = "button" onclick="newWindow()">New Window</button>
+    <p id ="test"> </p>
+    <p id = "xmlShow">here should display the content of xml file.</p>
+  </body>
+
+
+  <script>
+    function processXml(){
+      var xmlUrl = document.getElementById("urlInput").value;
+      document.getElementById("test").innerHTML = xmlUrl;
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if( this.readyState == 4 && this.status == 200){
+          renderXml(this);
+        }
+      }
+      // xmlhttp.open("GET", xmlUrl, true);
+      xmlhttp.open("GET", "airlinelist.xml", true);
+      xmlhttp.send();
+    }
+
+    function renderXml(xmlhttp){
+
+      // var xmlDoc = xmlhttp.responseText;
+      // document.getElementById("xmlShow").innerHTML = xmlDoc;
+
+
+      var xmlDoc = xmlhttp.responseXML;
+      var header = xmlDoc.getElementsByTagName('Header');
+
+      var txt = "";
+
+      // txt += header[0].nodeName+ " " +header[0].nodeType+ " " +header[0].nodeValue;
+      // txt += header.nodeName+ " " +header.nodeType+ " " +header.nodeValue;
+
+      var table = xmlDoc.getElementsByTagName('Table');
+
+
+      var row = table[0].childNodes.length; // include the 'header' row
+      var col = header[0].childNodes.length;
+      // txt = row + " " + col;
+
+      for(var i = 0; i< col; i++){
+        if(header[0].childNodes[i].nodeType == 1 ){
+          txt += header[0].childNodes[i].childNodes[0].nodeValue + "<br/>";
+        }
+      }
+
+      // for(var i = 0; i < 1; i++){
+      // }
+      document.getElementById("xmlShow").innerHTML = txt;
+
+      var popupWindow = window.open("", "", "width=800,height=600");
+
+      var html = popupWindow.document.createElement("html");
+      var head = popupWindow.document.createElement("head");
+      var body = popupWindow.document.createElement("body");
+      var p = popupWindow.document.createElement("p");
+      var text = popupWindow.document.createTextNode("test");
+
+      var x = popupWindow.document.doctype.name;
+      document.getElementById("test").innerHTML = x;
+
+      html.appendChild(head);
+      html.appendChild(body);
+      body.appendChild(p);
+      p.appendChild(text);
+      // var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+      // myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+    }
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>
+        hw4-query
+      </title>
+
+      <style>
+        body{text-align: center;}
+      </style>
+
+  </head>
+
+  <body>
+    <h1> Enter URL for Airline List XML File</h1>
+    <form>
+      <input type = "text" maxlength="255" size="100" id="urlInput" onkeypress="pointLoadXml(event);" >
+      <br/>
+      <input type = "button" value="Submit Query" onclick="loadXml()" >
+    </form>
+
+
+    <script>
+
+      var popupWindow; // declare before function loadXml(), in order to detect if there already exist a popupWindow
+
+      // console.log(popupWindow.closed);
+      function pointLoadXml(event){
+        if(event && event.keyCode == 13){   // EnterKey == 13
+          loadXml();
+          if(event.preventDefault){ event.preventDefault();} // leave text in text-area, not clear it
+          return false;
+        }
+      }
+
+
+      function loadXml(){
+        var xmlUrl = document.getElementById("urlInput").value;
+        xmlUrl = xmlUrl.trim();     // trim whitespace from both start and end of a String
+
+        if(xmlUrl == ""){           // check if no file is submitted
+          alert("Empty String is Submitted");
+        }else{                      // file is submitted
+
+          if(window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+            var xmlhttp=new XMLHttpRequest();
+          }else{                    // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+
+          xmlhttp.open("GET", xmlUrl, false);
+          xmlhttp.send();
+          var xmlDoc = xmlhttp.responseXML;
+          // var xmlDoc = xmlhttp.responseText;
+
+          // deal with [not find file] [can't parse] [unsupported character setting] [XMLHttpRequest not sent yet]
+          if(xmlDoc == null){
+            if (xmlhttp.status == 200){// file found, but cannot parse
+              alert("Invalid XML File");
+            }
+            else if(xmlhttp.status == 404){                          // file not found
+              alert("File Not Found");
+            }else{
+              alert("Other reasons caused 'xmlhttp.responseXML== null' ");
+            }
+          }else{
+            xmlDoc.onload=renderXml(xmlDoc);// render the webpage based on the content of xml file
+          }
+        }
+      }
+
+      function renderXml(xmlDoc){
+
+        var tablerNL = xmlDoc.getElementsByTagName('Table');
+        var headerNL = xmlDoc.getElementsByTagName('Header');
+
+        var row = tablerNL[0].children.length;
+        var col = headerNL[0].children.length;
+
+        if(row <= 1){                           // Has NO airline companies
+          alert("NO Airline Companies");
+        }else{                                  // has at least one airline companies
+
+          if (!popupWindow || popupWindow.closed) { // no popupWindow exist OR been closed
+            popupWindow = window.open("",  "HW4", "height=500, width=1000");
+          }else{                                    // already exist a popupWindow
+            popupWindow.focus();
+          }
+          // console.log(!popupWindow);
+          // console.log(popupWindow);
+
+          html_text="<html><head><title>Homework 4</title></head><!-- <body> --><!-- </body> --></html>";
+          popupWindow.document.write(html_text);
+
+          var tableN = popupWindow.document.createElement("TABLE");
+          popupWindow.document.body.appendChild(tableN);
+          tableN.setAttribute("border", "2");
+
+          var trN = popupWindow.document.createElement("TR");
+          tableN.appendChild(trN);
+
+          //-------header row---------
+          for(var i = 0; i < col; i++){
+            tdN = popupWindow.document.createElement("TD");
+            trN.appendChild(tdN);
+            dataNL = headerNL[0].children;
+            headInfo = dataNL[i].childNodes[0].nodeValue;
+            headInfo = headInfo.trim();
+            textN = popupWindow.document.createTextNode(headInfo);
+            tdN.appendChild(textN);
+          }
+          trN.style.fontWeight = "bold";
+          trN.style.textAlign = "center";
+
+          // ------remaining row----------
+          var rowNL = xmlDoc.getElementsByTagName('Row');
+
+          for(i = 0; i< rowNL.length; i++){//render the remaining rows, excluding the header row
+
+            var trN = popupWindow.document.createElement("TR");
+            tableN.appendChild(trN);
+
+            for(j = 0; j < rowNL[i].children.length; j++){   //render different columns in ith row
+              tdN = popupWindow.document.createElement("TD");// process a column in current row
+              trN.appendChild(tdN);
+
+              dataN = rowNL[i].children[j];       // like 'Airline' node, 'IATA' node
+
+              if(dataN.childNodes.length == 1){       // if this column only has one node(Text Node)
+
+                if(dataN.nodeName == "Plane"){        // this column should display <img>
+                  imgN = popupWindow.document.createElement("IMG");
+                  tdN.appendChild(imgN);
+                  srcValue = dataN.childNodes[0].nodeValue;
+                  srcValue = srcValue.trim();
+                  imgN.setAttribute("src", srcValue);
+                  imgN.setAttribute("width", "200");
+                  imgN.setAttribute("height", "150");
+
+                }else if(dataN.nodeName == "HomePage"){// this column should display <a>
+                  linkN = popupWindow.document.createElement("A");
+                  tdN.appendChild(linkN);
+                  hrefValue = dataN.childNodes[0].nodeValue;
+                  hrefValue = hrefValue.trim();
+                  textN = popupWindow.document.createTextNode(hrefValue);
+                  linkN.appendChild(textN);
+                  linkN.setAttribute("href", hrefValue);
+
+                }else{                                 // this column should display text
+                  colTxt = dataN.childNodes[0].nodeValue;
+                  colTxt = colTxt.trim();
+                  textN = popupWindow.document.createTextNode(colTxt);
+                  tdN.appendChild(textN);
+                }
+
+              }else if(dataN.childNodes.length > 1){           //this column have a list of element Node
+                ulN = popupWindow.document.createElement("UL");// create a UL in current column
+                tdN.appendChild(ulN);
+
+                for(k = 0; k < dataN.children.length; k++){
+                // for(k = 0; k < dataN.childNodes.length; k++){
+                //   if(dataN.childNodes[k].nodeType == 1){
+                    liN = popupWindow.document.createElement("LI");
+                    ulN.appendChild(liN);
+                    if(dataN.children[k].childNodes.length == 0){
+                      textN = "N.A";
+                    }else{
+                      textN = dataN.children[k].childNodes[0].nodeValue;
+                      textN = textN.trim();
+                      if(textN == ""){textN = "N.A";}
+                    }
+                    textLiN = popupWindow.document.createTextNode(textN);
+                    liN.appendChild(textLiN);
+                //   }
+                // }
+                }
+                ulN.getElementsByTagName("LI")[0].style.fontWeight="bold";
+              }else{  // dataN.childNodes.length == 0
+                // do nothing in current TD, leave it blank.
+              }
+            }
+          }
+          // console.log(popupWindow.closed);
+          // console.log(!popupWindow);
+          popupWindow.document.close();
+        }
+      }
+
+    </script>
+
+    <noscript>
+  </body>
+
+
+
+
+
+
+
+
+</html>

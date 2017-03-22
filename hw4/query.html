@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>
+        hw4-query
+      </title>
+
+      <style>
+        body{text-align: center;}
+      </style>
+  </head>
+
+
+<!-- <body> -->
+    <h1> Enter URL for Airline List XML File</h1>
+    <form>
+      <input type = "text" id="urlInput">
+      <br/>
+      <input type = "button" value="Submit Query" onclick="loadXml()" >
+    </form>
+
+<!-- </body> -->
+
+
+  <script>
+
+    function loadXml(){
+      var xmlUrl = document.getElementById("urlInput").value;
+
+      if(xmlUrl == ""){           // check if no file is submitted
+        alert("No file is submitted");
+      }else{                      // file is submitted
+
+        if(window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+          var xmlhttp=new XMLHttpRequest();
+        }else{                    // code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.open("GET", xmlUrl, false);
+        xmlhttp.send();
+        var xmlDoc = xmlhttp.responseXML;
+
+        // deal with invalid XML files situations
+        if(xmlDoc == null){ // not a XML||can't parse||unsupported character setting|| XMLHttpRequest not sent yet
+          alert("Invalid XML file");
+        }else{
+          var popupWindow = window.open("",  "", "height=500, width=1000");
+          xmlDoc.onload=renderXml(xmlDoc, popupWindow);// render the webpage based on the content of xml file
+          popupWindow.document.close();
+        }
+      }
+    }
+
+    function renderXml(xmlDoc, popupWindow){
+
+      var tablerNL = xmlDoc.getElementsByTagName('Table');
+      var headerNL = xmlDoc.getElementsByTagName('Header');
+
+      var row = tablerNL[0].children.length;
+      var col = headerNL[0].children.length;
+
+      if(row <= 1){                           // Has NO airline companies
+        alert("NO airline companies");
+      }else{                                  // has at least one airline companies
+        html_text="<html><head><title>Homework 4</title></head><!-- <body> --><!-- </body> --></html>";
+        popupWindow.document.write(html_text);
+
+        var tableN = popupWindow.document.createElement("TABLE");
+        popupWindow.document.body.appendChild(tableN);
+        tableN.setAttribute("border", "2");
+
+        var trN = popupWindow.document.createElement("TR");
+        tableN.appendChild(trN);
+
+        //-------header row---------
+        for(var i = 0; i < col; i++){
+          tdN = popupWindow.document.createElement("TD");
+          trN.appendChild(tdN);
+          dataNL = headerNL[0].children;
+          headInfo = dataNL[i].childNodes[0].nodeValue;
+          textN = popupWindow.document.createTextNode(headInfo);
+          tdN.appendChild(textN);
+        }
+
+        // ------remaining row----------
+        var rowNL = xmlDoc.getElementsByTagName('Row');
+
+        for(i = 0; i< rowNL.length; i++){//render the remaining rows, excluding the header row
+
+          var trN = popupWindow.document.createElement("TR");
+          tableN.appendChild(trN);
+
+          for(j = 0; j < rowNL[i].children.length; j++){   //render different columns in ith row
+            tdN = popupWindow.document.createElement("TD");// process a column in current row
+            trN.appendChild(tdN);
+
+            dataN = rowNL[i].children[j];       // like 'Airline' node, 'IATA' node
+
+            // console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+            // // console.log(dataN.childNodes[0].nodeValue);
+            // console.log(dataN.childNodes);
+            // console.log(dataN.childNodes.length);
+            // console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+            // console.log("---------------------------------------------------");
+            // console.log(dataN.children);
+            // console.log(dataN.children.length);
+            console.log("---------------------------------------------------");
+
+            if(dataN.childNodes.length == 1){       // if this column only has one node(Text Node)
+
+              if(dataN.nodeName == "Plane"){        // this column should display <img>
+                imgN = popupWindow.document.createElement("IMG");
+                tdN.appendChild(imgN);
+                srcValue = dataN.childNodes[0].nodeValue;
+                imgN.setAttribute("src", srcValue);
+                imgN.setAttribute("width", "200");
+                imgN.setAttribute("height", "150");
+
+              }else if(dataN.nodeName == "HomePage"){// this column should display <a>
+                linkN = popupWindow.document.createElement("A");
+                tdN.appendChild(linkN);
+                hrefValue = dataN.childNodes[0].nodeValue;
+                textN = popupWindow.document.createTextNode(hrefValue);
+                linkN.appendChild(textN);
+                linkN.setAttribute("href", hrefValue);
+
+              }else{                                 // this column should display text
+                colTxt = dataN.childNodes[0].nodeValue;
+                textN = popupWindow.document.createTextNode(colTxt);
+                tdN.appendChild(textN);
+              }
+
+            }else if(dataN.childNodes.length > 1){           //this column have a list of element Node
+              ulN = popupWindow.document.createElement("UL");// create a UL in current column
+              tdN.appendChild(ulN);
+
+
+              for(k = 0; k < dataN.children.length; k++){
+              // for(k = 0; k < dataN.childNodes.length; k++){
+              //   if(dataN.childNodes[k].nodeType == 1){
+                  liN = popupWindow.document.createElement("LI");
+                  ulN.appendChild(liN);
+                  console.log(dataN.children[k].childNodes.length);
+                  if(dataN.children[k].childNodes.length == 0){
+                    textN = "N.A";
+                  }else{
+                    textN = dataN.children[k].childNodes[0].nodeValue;
+                  }
+                  textLiN = popupWindow.document.createTextNode(textN);
+                  liN.appendChild(textLiN);
+              //   }
+              // }
+              }
+
+
+
+              // ulN.childNodes[0].setAttribute("style", "fontWeight:bold;");
+              ulN.getElementsByTagName("LI")[1].style.fontWeight="bold";
+              // console.log(ulN.childNodes[0]);
+            }else{  // dataN.childNodes.length == 0
+
+              // do nothing in current TD, leave it blank.
+            }
+          }
+        }
+      }
+    }
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

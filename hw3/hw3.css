@@ -1,0 +1,353 @@
+.wrapper{
+  width: 1172px;
+  height: 1253px;
+  /*padding: 0;*/
+  margin:0 auto;
+  font-family:  Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: lighter;
+  /*border: 1px black solid;*/
+
+  /*background-image: url(firefox.png);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity:0.8;*/
+}
+
+.upper{
+  padding-top: 45px;
+  width: 100%;
+  height: 672px;
+  text-align: center;
+  /*border: 1px red solid;*/
+}
+
+.location{
+  margin: auto;
+  width: 430px;
+  height: 261px;
+  background-color: black;
+  /*border: 1px blue dashed;*/
+}
+
+.location h2{
+  padding-top:62.4px;
+  margin-top: 0;
+  padding-right:8.7px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 14.6px;
+  font-weight: 400;
+  text-indent: 3px;
+  /*border: 1px red solid;*/
+}
+
+.location hr{
+  margin-top: 20.5px;
+  width:350px;
+  color:white;
+  border-bottom: 2px;
+}
+
+.no13{
+  margin: auto;
+  margin-top: 22px;
+  padding-right: 12px;
+  padding-left: 1px;
+  width: 240px;
+  /*border: 1px red solid;*/
+  color: white;
+}
+
+.no13 hr{
+  float: left;
+  width: 87px;
+  border: 3.3px white solid;
+  margin-top: 0px;
+  margin-left: 13.4px;
+}
+.no{
+  width: 38%;
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 13px;
+  font-weight: 500;
+  font-size: 59px;
+  text-align: left;
+}
+
+.thirteen{
+  margin-top: 1.5px;
+  margin-bottom: 0;
+  padding-right: 2px;
+  float: right;
+  /*border: 2px green solid;*/
+  line-height: 104px;
+  font-size: 120px;
+  font-weight: 500;
+  text-align:right;
+}
+.thirteen a:link{
+  text-decoration: none;
+}
+.clear{
+  clear: both;
+}
+.hello{
+  position: relative;
+  margin: auto;
+  margin-top: 46px;
+  padding-top: 42px;
+  width: 100%;
+  height: 366px;
+  /*background-image: url("sayhello.png");
+  background-size: 1170px;
+  background-repeat:no-repeat;*/
+  /*border: 1px blue solid;*/
+}
+/*.hello a.img{
+  display: block;
+  width: 1170px;
+}*/
+.hello img{
+  width: 1170px;
+  position: absolute;
+  left:0px;
+  top:0px;
+}
+/*.hello img {
+  width: 1170px;
+  position: absolute;
+  left:0px;
+  top:0px;
+}*/
+.hello h3{
+  margin-top: 53px;
+  margin-right: 6px;
+  /*border:1px red solid;*/
+  font-size: 14.9px;
+}
+.hello p{
+  line-height: 22px;
+  margin-top: 23px;
+  margin-right: 2px;
+  font-size: 18.1px;
+  font-weight: normal;
+  /*letter-spacing: 0.04px;*/
+}
+.hello a.getInTouch{
+  position: absolute;
+  margin-top:17.6px;
+  margin-left: 442.5px;
+  display: block;
+  width: 278.6px;
+  height: 52.2px;
+  background-color: white;
+  border: 3.7px solid black;
+  /*opacity: 0.5;*/
+}
+.hello a p.button{
+  margin-top: 15px;
+  padding-left: 3px;
+  padding-bottom: 13px;
+  font-size: 12.1px;
+  letter-spacing:0.7px;
+  font-weight: 500;
+}
+.hello  a:link{
+  color:black;
+  text-decoration:none;
+}
+.hello  a:hover{
+  background-color: black;
+  color:white;
+  text-decoration:none;
+}
+.lower{
+  position: relative;
+  width: 100%;
+  height: 534px;
+  background-color: black;
+  color: white;
+  /*border: 1px yellow solid;*/
+}
+.readSignUp{
+  height:203px;
+  border-bottom: 1px solid grey;
+}
+.read{
+  float: left;
+  width: 37.5%;
+  height: 100%;
+  border-right: solid 1px grey;
+}
+.read p{
+  margin-top:0;
+  margin-right:6px;
+  padding-top:103px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.82px;
+}
+.read p a:link{
+  text-decoration: none;
+}
+.read p a:hover{
+  text-decoration: underline;
+}
+.signUp{
+  width: 62.4%;
+  float: right;
+}
+.signUp p{
+  margin-top: 63.5px;
+  margin-left: 69px;
+  font-size: 12.5px;
+  letter-spacing: 0.67px;
+}
+.signUp .emailBox{
+  margin-top: 10.5px;
+  margin-left: 71px;
+  width: 315px;
+  height: 48.5px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+  /*opacity:0.5;*/
+  border: 1px solid black; /* Green */
+}
+.signUp a p{
+  float: right;
+  margin-top: 8px;
+  margin-left:0px;
+  margin-right: 103px;
+  width: 224px;
+  height: 55px;
+  line-height: 57px;
+  background-color: black;
+  text-align: center;
+  text-indent: 5px;
+  /*font-size: 19px;*/
+  color: white;
+  font-size: 11.9px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  /*opacity:0.5;*/
+  border: 3.3px solid white; /* Green */
+}
+.signUp a:hover p{
+  background-color:white;
+  color:black;
+}
+
+/*general style for all the 5 td*/
+.info table td{
+  text-indent: 35px;
+  padding-top: 31.6px;
+  width: 206px;
+  /*border: 1px red solid;*/
+}
+
+.info table td p{
+  margin:6.8px 0;
+  font-size: 13.7px;
+  letter-spacing: 0.05px;
+}
+.info table td p.addr,.info table td p.addr1{
+  padding-top: 0.4px;
+  font-size: 13.6px;
+  font-weight: 400;
+}
+.info table td p.officeType{
+  font-size: 15.8px;
+  font-weight: 400;
+}
+
+.info table td p.cityName{
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 14.5px;
+  font-weight: 400;
+}
+.info table td p.T{
+  padding-top: 30.7px;
+  letter-spacing: 0.07px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.info table td p.E{
+  line-height: 9px;
+}
+.info table td p.at{
+  font-weight: 400;
+  line-height: 11px;
+  letter-spacing: 0.2px;
+}
+.fontColorYellow{
+  color:#DAA520;
+}
+/*specific  style for 1st td*/
+.info table td.headquarters{
+  vertical-align:top;
+  width: 240px;
+  text-indent: 43px;
+  padding-top: 31px;
+}
+.info table td.headquarters p{
+  letter-spacing: 0.2px;
+}
+.info table td.headquarters p.addr1{
+  letter-spacing: 0.3px;
+}
+.info table td.headquarters a p.contactUs{
+  width: 177.7px;
+  /*height: 32.4px;*/
+  line-height: 30.4px;
+  position: absolute;
+  left:47px;
+  bottom: 51px;
+  border: 3.2px solid white;
+  text-indent: 32px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.info table td.headquarters a:hover p{
+  background-color:white;
+  color:black;
+}
+/*specific  style for 2nd td*/
+.info table td.TE{
+  /*width companied with width of headquarters*/
+  width: 172px;
+  padding-bottom: 56px;
+  text-indent: 4.9px;
+}
+.info table td.TE p{
+  font-size: 13.9px;
+  font-weight: 400;
+}
+/*specific  style for 3rd td*/
+.info table td.newyork p{
+  letter-spacing: 0.27px;
+}
+/*specific  style for 4th td*/
+.info table td.london{
+  padding-top: 30px;
+  text-indent:31px;
+}
+.info table td.london .cityName{
+  letter-spacing: 0.13px;
+}
+/*specific  style for 5th td*/
+.info table td.manchester{
+  padding-top: 30px;
+  text-indent:27px;
+}
+.info table td.manchester .cityName{
+  letter-spacing: 0.13px;
+}
+a:link {color: white}
+a:active { text-decoration:none; color: inherit;}
+a:hover { text-decoration:none;color: inherit;}
+a:visited { text-decoration:none;color: inherit;}
