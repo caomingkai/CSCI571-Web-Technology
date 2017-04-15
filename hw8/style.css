@@ -1,0 +1,110 @@
+
+
+.headFont {
+  font-weight: 200;
+  font-size: 20px;
+  margin-right: -50px;
+  margin-left: 10px;
+}
+
+.search {
+  width: 70px;
+  height: 34px;
+}
+
+.clear {
+  width: 65px;
+  margin-left: 20px;
+}
+
+
+
+
+.nav {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 200;
+  border-bottom-style: solid;
+  border-bottom-color: #337ab5;
+}
+
+.nav li {
+  padding: 0px;
+}
+
+.nav-pills li + li {
+  margin: 0px;
+}
+
+.nav li a {
+  border-radius: 0px;
+  height: 56px;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav li a:hover {
+  background-color: white;
+}
+
+
+.facebook-icon {
+  margin-left: 15px;
+  padding: 0px;
+  float: right;
+  width: 45px;
+  height: 32px;
+}
+
+.facebook-icon img {
+  margin: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Animation */
+.view-animate {
+  padding: 20px;
+}
+
+.view-animate.ng-enter {
+  transition:all linear 0.5s;
+
+  display:block;
+  width:100%;
+
+  position:relative;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.view-animate.ng-enter {
+  left:-100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+
+.view-animate-reverse.ng-enter {
+  transition:all linear 0.5s;
+
+  display:block;
+  width:100%;
+
+  position:relative;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.view-animate-reverse.ng-enter {
+  left:100%;
+}
+.view-animate-reverse.ng-enter.ng-enter-active {
+  left:0;
+}
